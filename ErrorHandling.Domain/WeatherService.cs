@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ErrorHandling.Domain.Exception;
 
 namespace ErrorHandling.Domain
 {
@@ -15,7 +16,7 @@ namespace ErrorHandling.Domain
         public IEnumerable<WeatherForecast> Get(string cityName)
         {
             if (cityName == "Parulia")
-                throw new Exception("NO data found");
+                throw new DomainValidationException("NO data found");
 
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
