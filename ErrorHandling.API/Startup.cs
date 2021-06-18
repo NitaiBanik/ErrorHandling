@@ -12,7 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
-namespace ErrorHandling
+namespace ErrorHandling.API
 {
     public class Startup
     {
@@ -30,7 +30,7 @@ namespace ErrorHandling
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ErrorHandling", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ErrorHandling.API", Version = "v1" });
             });
         }
 
@@ -41,7 +41,7 @@ namespace ErrorHandling
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ErrorHandling v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ErrorHandling.API v1"));
             }
 
             app.UseHttpsRedirection();
