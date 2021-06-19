@@ -1,6 +1,6 @@
 using System;
 
-namespace ErrorHandling.Domain
+namespace ErrorHandling.API
 {
     public class WeatherForecast
     {
